@@ -1,0 +1,37 @@
+{% extends 'base1.html' %}
+{%load static%}
+
+{%block products %}
+<div class="container">
+  <div class="row mt-5 border border-2 shadow">
+      <div class=" col-lg-4">
+          <div class="card" style="width: 18rem; border: none x;">
+              <img src="{{product_detail.product_image.url}}" class="card-img-top" alt="..." style="height: 370px; border:none;">
+          </div>
+          <a href="{%url 'redir' product_detail.id%}"></a>
+          <button type="button" class="btn btn-danger btn-lg " style="border-radius: 0%;">Add to Cart</button>        
+          <button type="button" class="btn btn-success btn-lg"  style="border-radius: 0%;"><i class="fa-solid fa-bolt"></i>Buy now</button> 
+      </div>  
+
+      <div class="col col-lg-4 mt-5">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+              </ol>
+            </nav>
+            <ul>
+                <li>{{product_detail.product_name}}</li>
+                <li>{{product_detail.product_description}}</li>
+                <li>{{product_detail.product_category}}</li>
+            </ul>
+      </div>
+      <div class="col col-lg-4">
+        <div class="card-title mt-5">
+            <h2><i class="fa-solid fa-indian-rupee-sign"></i> {{product_detail.product_price}}</h2>
+        </div>
+</div>    
+</div>
+</div>
+{% endblock products %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{%load static%}
+
+{%block content %}
+       <div class="container-fluid">
+        <div class="row mt-5">
+            {% for i in categories %}
+            <div class="col col-lg-2 col-md-4 col-6">
+                <a href="{% url 'categorydet' i.id %}" style="text-decoration: none;">
+                    <!-- {% url 'categorydet' i.id %} --- ith kodukunnath caetgoeis click cheyumbo category detailslekk povan by filtered using  category id -->
+                    <div class="card" style="width: 14rem; border-radius: 20px; overflow: hidden; border: none;">
+                    <div class="content" style="border-radius:60%; border: hidden;">
+                    <img src="{{i.category_image.url}}" class="card-img-top" alt="..." style="height:150px; border-radius: 20%;">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">{{i.category_name}}</h5>
+                      
+                      </div>
+                      </div>
+                  </div>
+              </a>
+            </div>
+            {%endfor%}
+        </div>
+       </div>     
+ 
+{%endblock content%}
+
+
+
